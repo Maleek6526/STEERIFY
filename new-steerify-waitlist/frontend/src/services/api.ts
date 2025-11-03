@@ -1,6 +1,6 @@
 import { Subscriber, ApiResponse } from '../types';
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001/api';
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://steerify.onrender.com/api';
 
 class ApiService {
   private async request<T>(
