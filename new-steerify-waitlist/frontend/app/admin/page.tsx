@@ -1,36 +1,48 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import { getAllSubscribers } from "../../src/services/api";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Users, Calendar, Mail, UserCheck } from "lucide-react";
+import { Mail, Users, Calendar, UserCheck } from "lucide-react";
 import BulkEmailForm from "../components/bulk-email-form";
 import { SubscribersTable } from "./subscribers-table";
 import { Subscriber } from "../../src/types";
 
-export default async function AdminPage() {
+export default function AdminPage() {
+  const [subscribers, setSubscribers] = useState<Subscriber[]>([]);
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(true);
 
-  let subscribers: Subscriber[] = [];
-  let error: string | null = null;
+  useEffect(() => {
+    const fetchSubscribers = async () => {
+      try {
+        console.log("[v0] Admin page: Fetching subscribers");
+        const data = await getAllSubscribers();
+        console.log("[v0] Admin page: Got subscribers:", data.length);
+        setSubscribers(data);
+      } catch (err: any) {
+        console.error("[v0] Admin page: Error fetching subscribers:", err);
+        setError(err.message || "Failed to fetch subscribers");
+      } finally {
+        setLoading(false);
+      }
+    };
 
-  try {
-    console.log("[v0] Admin page: Fetching subscribers");
-    subscribers = await getAllSubscribers();
-    console.log("[v0] Admin page: Got subscribers:", subscribers.length);
-  } catch (err) {
-    console.error("[v0] Admin page: Error fetching subscribers:", err);
-    error = String(err);
+    fetchSubscribers();
+  }, []);
+
+  const safeSubscribers = subscribers.map(({ _id, ...rest }: any) => ({ ...rest }));
+
+  const customerCount = safeSubscribers.filter(sub => sub.role === "customer").length;
+  const providerCount = safeSubscribers.filter(sub => sub.role === "provider").length;
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center text-gray-600">
+        Loading subscribers...
+      </div>
+    );
   }
-
-  // Remove _id and ensure all fields are serializable
-  const safeSubscribers = (subscribers as any[]).map(({ _id, ...rest }) => ({
-    ...rest,
-  }));
-
-  const customerCount = safeSubscribers.filter(
-    sub => sub.role === "customer"
-  ).length;
-  const providerCount = safeSubscribers.filter(
-    sub => sub.role === "provider"
-  ).length;
 
   return (
     <div className="min-h-screen bg-gray-50 p-6">
@@ -61,9 +73,7 @@ export default async function AdminPage() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
           <Card>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">
-                Total Subscribers
-              </CardTitle>
+              <CardTitle className="text-sm font-medium">Total Subscribers</CardTitle>
               <Users className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
@@ -99,9 +109,7 @@ export default async function AdminPage() {
 
           <Card>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">
-                Latest Signup
-              </CardTitle>
+              <CardTitle className="text-sm font-medium">Latest Signup</CardTitle>
               <Calendar className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
