@@ -1,8 +1,8 @@
 import { MongoClient, Db, Collection } from "mongodb";
 import type { Subscriber } from "../models/subscriber";
 
-const uri = process.env.MONGODB_URI || "";
-const dbName = process.env.MONGODB_DB || "steerify";
+const uri = process.env.MONGODB_URI;
+const dbName = process.env.MONGODB_DB;
 const collectionName = "waitlist_subscribers";
 
 let client: MongoClient | null = null;
