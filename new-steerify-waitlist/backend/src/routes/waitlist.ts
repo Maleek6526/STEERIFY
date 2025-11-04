@@ -1,11 +1,11 @@
 import express, { Request, Response } from "express";
-import nodemailer from "nodemailer";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import { z } from "zod";
 import React from "react";
 import ReactDOMServer from "react-dom/server";
-import { EmailTemplate } from "../components/email-template"; // adjust the path if needed
+import { Resend } from "resend";
+import { EmailTemplate } from "../components/email-template"; // adjust path if needed
 
 dotenv.config();
 
@@ -13,8 +13,8 @@ const router = express.Router();
 
 /* ------------------------- MongoDB Connection ------------------------- */
 if (!mongoose.connection.readyState) {
-mongoose
-  .connect(process.env.MONGODB_URI as string)
+  mongoose
+    .connect(process.env.MONGODB_URI as string)
     .then(() => console.log("✅ Connected to MongoDB"))
     .catch((err: unknown) => console.error("❌ MongoDB connection error:", err));
 }
@@ -32,16 +32,8 @@ const subscriberSchema = new mongoose.Schema(
 
 const Subscriber = mongoose.model("Subscriber", subscriberSchema);
 
-/* ------------------------- Nodemailer Transporter ------------------------- */
-const transporter = nodemailer.createTransport({
-  host: process.env.EMAIL_HOST, // e.g. smtp.gmail.com
-  port: Number(process.env.EMAIL_PORT) || 587,
-  secure: process.env.EMAIL_SECURE === "true", // true for 465, false for 587
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
-  },
-});
+/* ------------------------- Resend Setup ------------------------- */
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 /* --------------------------- Validation Schema --------------------------- */
 const schema = z.object({
@@ -71,10 +63,10 @@ router.post("/join", async (req: Request, res: Response) => {
       React.createElement(EmailTemplate, { name, email })
     );
 
-    // Try sending welcome email first
+    // Try sending welcome email via Resend
     try {
-      await transporter.sendMail({
-        from: `"Steerify" <${process.env.EMAIL_USER}>`,
+      await resend.emails.send({
+        from: "Steerify <info@steerifygroup.com>",
         to: email,
         subject: "Welcome to Steerify Waitlist! 🎉",
         html: emailHTML,
@@ -90,7 +82,7 @@ router.post("/join", async (req: Request, res: Response) => {
       });
     }
 
-    // Only save if mail was sent successfully
+    // Save subscriber only if email sent successfully
     const newSubscriber = await Subscriber.create({ name, email, role });
     const count = await Subscriber.countDocuments();
 
@@ -183,8 +175,8 @@ router.post("/bulk-email", async (req: Request, res: Response) => {
     const results = await Promise.allSettled(
       emails.map(async (email: string) => {
         console.log(`📤 Sending to ${email}...`);
-        await transporter.sendMail({
-          from: `"Steerify" <${process.env.EMAIL_USER}>`,
+        await resend.emails.send({
+          from: "Steerify <info@steerifygroup.com>",
           to: email,
           subject,
           html: `<div style="font-family:sans-serif;line-height:1.6;">${body.replace(
