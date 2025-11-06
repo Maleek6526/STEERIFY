@@ -66,7 +66,7 @@ router.post("/join", async (req: Request, res: Response) => {
     // Try sending welcome email via Resend
     try {
       await resend.emails.send({
-        from: "Steerify <info@steerifygroup.com>",
+        from: "no-reply@steerifygroup.com",
         to: email,
         subject: "Welcome to Steerify Waitlist! 🎉",
         html: emailHTML,
@@ -176,7 +176,7 @@ router.post("/bulk-email", async (req: Request, res: Response) => {
       emails.map(async (email: string) => {
         console.log(`📤 Sending to ${email}...`);
         await resend.emails.send({
-          from: "Steerify <info@steerifygroup.com>",
+          from: "no-reply@steerifygroup.com",
           to: email,
           subject,
           html: `<div style="font-family:sans-serif;line-height:1.6;">${body.replace(
