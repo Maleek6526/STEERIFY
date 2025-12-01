@@ -76,11 +76,11 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
         </p>
         
         <p style={{ fontSize: '16px', marginBottom: '15px' }}>
-          Thank you for joining the Steerify Cleaning waitlist! We're thrilled to have you on board as we revolutionize the cleaning service industry.
+          Thank you for joining the Steerify Service waitlist! We're thrilled to have you on board as we revolutionize the Service service industry.
         </p>
         
         <p style={{ fontSize: '16px', marginBottom: '20px' }}>
-          You'll be among the first to know when we launch in your area. Get ready to experience seamless cleaning services at your fingertips!
+          You'll be among the first to know when we launch in your area. Get ready to experience seamless Service services at your fingertips!
         </p>
 
         {/* Info Box */}
@@ -148,7 +148,7 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
           margin: '0'
         }}>
           If you didn't sign up for Steerify, please ignore this email.<br />
-          © 2024 Steerify Cleaning. All rights reserved.
+          © 2024 Steerify Service. All rights reserved.
         </p>
       </div>
     </div>

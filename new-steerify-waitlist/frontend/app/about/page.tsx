@@ -117,7 +117,7 @@ export default function AboutPage() {
               </li>
               <li className="flex items-center gap-4 p-4 rounded-xl bg-white shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
                 <Rocket className="w-6 h-6 text-orange-500 flex-shrink-0" />
-                <span className="text-gray-700">Scale your cleaning business without expensive ads</span>
+                <span className="text-gray-700">Scale your Service business without expensive ads</span>
               </li>
             </ul>
           </section>

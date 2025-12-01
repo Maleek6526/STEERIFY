@@ -82,7 +82,7 @@ export function WaitlistSignup() {
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 text-balance">
               <span className="inline-flex items-center">
                 <EnhancedArrowIcon className="w-12 h-12 mr-4 text-green-400" />
-                Nigeria's #1 Smart Marketplace — Launching Soon
+                Nigeria's No 1 Smart Marketplace — Launching Soon
               </span>
             </h1>
             <p className="text-xl sm:text-2xl text-white/90 mb-8 max-w-4xl mx-auto text-pretty">
@@ -130,7 +130,7 @@ export function WaitlistSignup() {
                     <div className="flex items-center bg-gray-100 rounded-xl p-4">
                       <input
                         type="text"
-                        placeholder="Search for cleaning services..."
+                        placeholder="Search for Service services..."
                         className="flex-1 bg-transparent outline-none text-gray-700"
                         readOnly
                       />
@@ -329,7 +329,7 @@ export function WaitlistSignup() {
                 </div>
                 <div className="ml-4">
                   <h4 className="font-bold text-steerify-blue">Sarah M.</h4>
-                  <p className="text-gray-600 text-sm">Cleaning Provider</p>
+                  <p className="text-gray-600 text-sm">Service Provider</p>
                 </div>
               </div>
               <p className="text-gray-700">

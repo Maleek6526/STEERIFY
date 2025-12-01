@@ -39,7 +39,7 @@ export function WaitlistForm({ onSuccess }: WaitlistFormProps) {
         setIsSubmitted(true); // Show success message
         toast({
           title: "Thank you for signing up!",
-          description: "We'll notify you when Steerify Cleaning launches in your city.",
+          description: "We'll notify you when Steerify Service launches in your city.",
           duration: 5000,
         });
         if (result.count) {

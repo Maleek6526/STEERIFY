@@ -38,7 +38,7 @@ export default function RootLayout({
               />
               <span className="hidden sm:inline">Steerify</span>
             </a>
-            <div className="flex gap-6 text-base font-medium">
+            <div className="flex flex-wrap gap-3 sm:gap-6 text-base font-medium">
               <a href="/" className="hover:text-primary transition-colors px-2 py-2">
                 Home
               </a>
