@@ -26,8 +26,7 @@ export default function AboutPage() {
             </h1>
             <p className="text-xl text-blue-50 max-w-3xl mx-auto">
               Steerify is a concierge-powered marketplace that connects people with
-              quality service providers. From cleaning to home services, we bring
-              trust, security, and simplicity into every booking.
+              quality service providers. We bring trust, security, and simplicity into every booking.
             </p>
           </div>
         </div>
@@ -38,31 +37,31 @@ export default function AboutPage() {
         {/* Steerify Cleaning (MVP focus) */}
         <section className="space-y-6 bg-white rounded-2xl shadow-xl p-8 mb-16 border border-gray-100">
           <h2 className="text-3xl font-bold text-gray-900">
-            Introducing Steerify Cleaning
+            Introducing Steerify
           </h2>
           <p className="text-lg text-gray-600">
-            Steerify Cleaning is our first step in revolutionizing the service
+            Steerify is our first step in revolutionizing the service
             industry. It's a platform built to help:
           </p>
           <ul className="space-y-3 text-left">
             <li className="flex items-start gap-3 p-3 rounded-lg bg-blue-50">
               <div className="w-2 h-2 bg-steerify-blue rounded-full mt-2 flex-shrink-0"></div>
               <span className="text-gray-700">
-                <b className="text-steerify-blue">Customers</b> → Find trusted, verified cleaners instantly, book
+                <b className="text-steerify-blue">Customers</b> → Find trusted, verified providers instantly, book
                 with confidence, and pay securely using escrow.
               </span>
             </li>
             <li className="flex items-start gap-3 p-3 rounded-lg bg-teal-50">
               <div className="w-2 h-2 bg-steerify-teal rounded-full mt-2 flex-shrink-0"></div>
               <span className="text-gray-700">
-                <b className="text-steerify-teal">Providers</b> → Grow your cleaning business with AI-driven
+                <b className="text-steerify-teal">Providers</b> → Grow your business with AI-driven
                 matching, exposure to more clients, and guaranteed payments after
                 service completion.
               </span>
             </li>
           </ul>
           <p className="text-lg text-gray-600 mt-4">
-            This isn't just another cleaning marketplace—it's a system built on
+            This isn't just another marketplace—it's a system built on
             trust, quality, and growth.
           </p>
         </section>
@@ -75,7 +74,7 @@ export default function AboutPage() {
             <ul className="space-y-4">
               <li className="flex items-center gap-4 p-4 rounded-xl bg-white shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
                 <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0" />
-                <span className="text-gray-700">Book trusted cleaners in minutes</span>
+                <span className="text-gray-700">Book trusted providers in minutes</span>
               </li>
               <li className="flex items-center gap-4 p-4 rounded-xl bg-white shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
                 <Shield className="w-6 h-6 text-blue-500 flex-shrink-0" />
@@ -132,8 +131,8 @@ export default function AboutPage() {
               Be part of the future of services
             </h3>
             <p className="text-xl text-blue-50 max-w-2xl mx-auto">
-              Whether you're looking for trusted cleaners or want to grow your
-              cleaning business, Steerify Cleaning is designed for you. Join the
+              Whether you're looking for trusted providers or want to grow your 
+              business, Steerify is designed for you. Join the
               waitlist today and be among the first to experience a smarter, safer,
               and more rewarding way to connect.
             </p>

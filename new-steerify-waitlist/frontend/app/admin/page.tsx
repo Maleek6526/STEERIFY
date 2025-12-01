@@ -52,7 +52,7 @@ export default function AdminPage() {
             Waitlist Dashboard
           </h1>
           <p className="text-gray-600">
-            Manage your Steerify Cleaning waitlist subscribers
+            Manage your Steerify waitlist subscribers
           </p>
         </div>
 

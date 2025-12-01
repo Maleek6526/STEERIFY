@@ -82,11 +82,11 @@ export function WaitlistSignup() {
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 text-balance">
               <span className="inline-flex items-center">
                 <EnhancedArrowIcon className="w-12 h-12 mr-4 text-green-400" />
-                Nigeria's #1 Smart Cleaning Marketplace — Launching Soon
+                Nigeria's #1 Smart Marketplace — Launching Soon
               </span>
             </h1>
             <p className="text-xl sm:text-2xl text-white/90 mb-8 max-w-4xl mx-auto text-pretty">
-              Book trusted cleaners in minutes. Grow your cleaning business with
+              Book trusted providers in minutes. Grow your business with
               AI-powered matching and escrow-protected payments.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
@@ -187,7 +187,7 @@ export function WaitlistSignup() {
               Benefits for Everyone
             </h2>
             <p className="text-xl text-gray-600">
-              Whether you're looking for cleaning services or providing them,
+              Whether you're looking for services or providing them,
               Steerify has you covered.
             </p>
           </div>
@@ -363,7 +363,7 @@ export function WaitlistSignup() {
                 </div>
               </div>
               <p className="text-gray-700">
-                "AI-powered matching means I'll get the right cleaner for my
+                "AI-powered matching means I'll get the right providers for my
                 office. Brilliant concept!"
               </p>
             </div>
@@ -460,10 +460,10 @@ export function WaitlistSignup() {
             </div>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-            Your next cleaning service is just a tap away.
+            Your next best service is just a tap away.
           </h2>
           <p className="text-xl text-white/90 mb-8">
-            Don't miss out — secure your spot on the Steerify Cleaning waitlist
+            Don't miss out — secure your spot on the Steerify waitlist
             today.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
@@ -489,7 +489,7 @@ export function WaitlistSignup() {
           </div>
           <div className="mt-12 pt-8 border-t border-white/20">
             <p className="text-white/80 text-lg">
-              Cleaning made simple. Payments made safe.
+              Services order made simple. Payments made safe.
             </p>
           </div>
         </div>
@@ -499,7 +499,7 @@ export function WaitlistSignup() {
       <section id="waitlist-form" className="py-20 bg-gray-50">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-steerify-blue mb-4">
-            Be among the first to experience Steerify Cleaning.
+            Be among the first to experience Steerify Professsionalism.
           </h2>
           <p className="text-xl text-gray-600 mb-12">
             Early members enjoy priority bookings, premium visibility, and

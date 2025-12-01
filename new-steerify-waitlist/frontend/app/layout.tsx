@@ -10,9 +10,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Steerify Cleaning - Join the Waitlist",
+  title: "Steerify - Join the Waitlist",
   description:
-    "Join the next evolution of trusted cleaning services. AI-matched providers, secure payments, and effortless scheduling.",
+    "Join the next evolution of trusted services. AI-matched providers, secure payments, and effortless scheduling.",
   generator: "v0.app",
 };
 
